@@ -1,1 +1,1 @@
-FOR %A IN (*) DO git add %A 
+FOR %%A IN (*) DO git add %%A 

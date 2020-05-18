@@ -120,6 +120,15 @@ Partial Class Registros
         TipoLabel.TabIndex = 13
         TipoLabel.Text = "Tipo:"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(12, 176)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(111, 13)
+        Label1.TabIndex = 21
+        Label1.Text = "Confirmar Contraseña:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(137, 17)
@@ -159,6 +168,7 @@ Partial Class Registros
         '
         Me.txtContra.Location = New System.Drawing.Point(137, 150)
         Me.txtContra.Name = "txtContra"
+        Me.txtContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContra.Size = New System.Drawing.Size(395, 20)
         Me.txtContra.TabIndex = 19
         '
@@ -166,17 +176,9 @@ Partial Class Registros
         '
         Me.txtContraConf.Location = New System.Drawing.Point(137, 176)
         Me.txtContraConf.Name = "txtContraConf"
+        Me.txtContraConf.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContraConf.Size = New System.Drawing.Size(395, 20)
         Me.txtContraConf.TabIndex = 22
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(12, 176)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(111, 13)
-        Label1.TabIndex = 21
-        Label1.Text = "Confirmar Contraseña:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Button1
         '

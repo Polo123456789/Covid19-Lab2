@@ -425,7 +425,7 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddUsuariosRow(ByVal Nombre As String, ByVal Contacto As Integer, ByVal Zona As String, ByVal DPI As Integer, ByVal CorreoElectronico As String, ByVal Contraseña As Integer, ByVal Tipo As String) As UsuariosRow
+        Public Overloads Function AddUsuariosRow(ByVal Nombre As String, ByVal Contacto As String, ByVal Zona As String, ByVal DPI As String, ByVal CorreoElectronico As String, ByVal Contraseña As String, ByVal Tipo As String) As UsuariosRow
             Dim rowUsuariosRow As UsuariosRow = CType(Me.NewRow,UsuariosRow)
             Dim columnValuesArray() As Object = New Object() {Nombre, Contacto, Zona, DPI, CorreoElectronico, Contraseña, Tipo}
             rowUsuariosRow.ItemArray = columnValuesArray
@@ -435,7 +435,7 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByDPI(ByVal DPI As Integer) As UsuariosRow
+        Public Function FindByDPI(ByVal DPI As String) As UsuariosRow
             Return CType(Me.Rows.Find(New Object() {DPI}),UsuariosRow)
         End Function
         
@@ -470,24 +470,27 @@ Partial Public Class Base_Datos11DataSet
         Private Sub InitClass()
             Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombre)
-            Me.columnContacto = New Global.System.Data.DataColumn("Contacto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnContacto = New Global.System.Data.DataColumn("Contacto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnContacto)
             Me.columnZona = New Global.System.Data.DataColumn("Zona", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnZona)
-            Me.columnDPI = New Global.System.Data.DataColumn("DPI", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDPI = New Global.System.Data.DataColumn("DPI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDPI)
             Me.columnCorreoElectronico = New Global.System.Data.DataColumn("CorreoElectronico", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCorreoElectronico)
-            Me.columnContraseña = New Global.System.Data.DataColumn("Contraseña", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnContraseña = New Global.System.Data.DataColumn("Contraseña", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnContraseña)
             Me.columnTipo = New Global.System.Data.DataColumn("Tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTipo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnDPI}, true))
             Me.columnNombre.MaxLength = 50
+            Me.columnContacto.MaxLength = 255
             Me.columnZona.MaxLength = 50
             Me.columnDPI.AllowDBNull = false
             Me.columnDPI.Unique = true
+            Me.columnDPI.MaxLength = 255
             Me.columnCorreoElectronico.MaxLength = 536870910
+            Me.columnContraseña.MaxLength = 255
             Me.columnTipo.MaxLength = 50
         End Sub
         
@@ -650,10 +653,10 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Contacto() As Integer
+        Public Property Contacto() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUsuarios.ContactoColumn),Integer)
+                    Return CType(Me(Me.tableUsuarios.ContactoColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Contacto' in table 'Usuarios' is DBNull.", e)
                 End Try
@@ -680,9 +683,9 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DPI() As Integer
+        Public Property DPI() As String
             Get
-                Return CType(Me(Me.tableUsuarios.DPIColumn),Integer)
+                Return CType(Me(Me.tableUsuarios.DPIColumn),String)
             End Get
             Set
                 Me(Me.tableUsuarios.DPIColumn) = value
@@ -706,10 +709,10 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Contraseña() As Integer
+        Public Property Contraseña() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableUsuarios.ContraseñaColumn),Integer)
+                    Return CType(Me(Me.tableUsuarios.ContraseñaColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Contraseña' in table 'Usuarios' is DBNull.", e)
                 End Try
@@ -991,12 +994,12 @@ Namespace Base_Datos11DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Nombre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contacto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Zona", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Zona", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DPI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DPI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contraseña", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Tipo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
@@ -1005,11 +1008,11 @@ Namespace Base_Datos11DataSetTableAdapters
                 " `Contraseña`, `Tipo`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Zona", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CorreoElectronico", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CorreoElectronico", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
@@ -1021,21 +1024,21 @@ Namespace Base_Datos11DataSetTableAdapters
                 "R (`Tipo` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Zona", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CorreoElectronico", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CorreoElectronico", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Nombre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Nombre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contacto", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Zona", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Zona", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DPI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DPI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contraseña", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Tipo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Tipo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -1062,11 +1065,11 @@ Namespace Base_Datos11DataSetTableAdapters
                 " `Contraseña`, `Tipo`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nombre", Global.System.Data.OleDb.OleDbType.WChar, 50, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contacto", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contacto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Zona", Global.System.Data.OleDb.OleDbType.WChar, 50, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Zona", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DPI", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DPI", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CorreoElectronico", Global.System.Data.OleDb.OleDbType.WChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CorreoElectronico", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contraseña", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contraseña", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Tipo", Global.System.Data.OleDb.OleDbType.WChar, 50, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Tipo", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
@@ -1126,7 +1129,7 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Nombre As String, ByVal Original_Contacto As Global.System.Nullable(Of Integer), ByVal Original_Zona As String, ByVal Original_DPI As Integer, ByVal Original_Contraseña As Global.System.Nullable(Of Integer), ByVal Original_Tipo As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Nombre As String, ByVal Original_Contacto As String, ByVal Original_Zona As String, ByVal Original_DPI As String, ByVal Original_Contraseña As String, ByVal Original_Tipo As String) As Integer
             If (Original_Nombre Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -1134,12 +1137,12 @@ Namespace Base_Datos11DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Nombre,String)
             End If
-            If (Original_Contacto.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Contacto.Value,Integer)
-            Else
+            If (Original_Contacto Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Contacto,String)
             End If
             If (Original_Zona Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
@@ -1148,13 +1151,17 @@ Namespace Base_Datos11DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_Zona,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_DPI,Integer)
-            If (Original_Contraseña.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Contraseña.Value,Integer)
+            If (Original_DPI Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_DPI")
             Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_DPI,String)
+            End If
+            If (Original_Contraseña Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Contraseña,String)
             End If
             If (Original_Tipo Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
@@ -1182,32 +1189,36 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Nombre As String, ByVal Contacto As Global.System.Nullable(Of Integer), ByVal Zona As String, ByVal DPI As Integer, ByVal CorreoElectronico As String, ByVal Contraseña As Global.System.Nullable(Of Integer), ByVal Tipo As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Nombre As String, ByVal Contacto As String, ByVal Zona As String, ByVal DPI As String, ByVal CorreoElectronico As String, ByVal Contraseña As String, ByVal Tipo As String) As Integer
             If (Nombre Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Nombre,String)
             End If
-            If (Contacto.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Contacto.Value,Integer)
-            Else
+            If (Contacto Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Contacto,String)
             End If
             If (Zona Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(Zona,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(DPI,Integer)
+            If (DPI Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("DPI")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DPI,String)
+            End If
             If (CorreoElectronico Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(CorreoElectronico,String)
             End If
-            If (Contraseña.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Contraseña.Value,Integer)
-            Else
+            If (Contraseña Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Contraseña,String)
             End If
             If (Tipo Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -1233,32 +1244,36 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Contacto As Global.System.Nullable(Of Integer), ByVal Zona As String, ByVal DPI As Integer, ByVal CorreoElectronico As String, ByVal Contraseña As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Original_Nombre As String, ByVal Original_Contacto As Global.System.Nullable(Of Integer), ByVal Original_Zona As String, ByVal Original_DPI As Integer, ByVal Original_Contraseña As Global.System.Nullable(Of Integer), ByVal Original_Tipo As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Contacto As String, ByVal Zona As String, ByVal DPI As String, ByVal CorreoElectronico As String, ByVal Contraseña As String, ByVal Tipo As String, ByVal Original_Nombre As String, ByVal Original_Contacto As String, ByVal Original_Zona As String, ByVal Original_DPI As String, ByVal Original_Contraseña As String, ByVal Original_Tipo As String) As Integer
             If (Nombre Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Nombre,String)
             End If
-            If (Contacto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Contacto.Value,Integer)
-            Else
+            If (Contacto Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Contacto,String)
             End If
             If (Zona Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Zona,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DPI,Integer)
+            If (DPI Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("DPI")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DPI,String)
+            End If
             If (CorreoElectronico Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CorreoElectronico,String)
             End If
-            If (Contraseña.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Contraseña.Value,Integer)
-            Else
+            If (Contraseña Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Contraseña,String)
             End If
             If (Tipo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -1272,12 +1287,12 @@ Namespace Base_Datos11DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Nombre,String)
             End If
-            If (Original_Contacto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Contacto.Value,Integer)
-            Else
+            If (Original_Contacto Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Contacto,String)
             End If
             If (Original_Zona Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
@@ -1286,13 +1301,17 @@ Namespace Base_Datos11DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Zona,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_DPI,Integer)
-            If (Original_Contraseña.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Contraseña.Value,Integer)
+            If (Original_DPI Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_DPI")
             Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_DPI,String)
+            End If
+            If (Original_Contraseña Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Contraseña,String)
             End If
             If (Original_Tipo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
@@ -1320,7 +1339,7 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Contacto As Global.System.Nullable(Of Integer), ByVal Zona As String, ByVal CorreoElectronico As String, ByVal Contraseña As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Original_Nombre As String, ByVal Original_Contacto As Global.System.Nullable(Of Integer), ByVal Original_Zona As String, ByVal Original_DPI As Integer, ByVal Original_Contraseña As Global.System.Nullable(Of Integer), ByVal Original_Tipo As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Contacto As String, ByVal Zona As String, ByVal CorreoElectronico As String, ByVal Contraseña As String, ByVal Tipo As String, ByVal Original_Nombre As String, ByVal Original_Contacto As String, ByVal Original_Zona As String, ByVal Original_DPI As String, ByVal Original_Contraseña As String, ByVal Original_Tipo As String) As Integer
             Return Me.Update(Nombre, Contacto, Zona, Original_DPI, CorreoElectronico, Contraseña, Tipo, Original_Nombre, Original_Contacto, Original_Zona, Original_DPI, Original_Contraseña, Original_Tipo)
         End Function
         
@@ -1328,33 +1347,37 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function Registrar(ByVal Nombre As String, ByVal Contacto As Global.System.Nullable(Of Integer), ByVal Zona As String, ByVal DPI As Integer, ByVal CorreoElectronico As String, ByVal Contraseña As Global.System.Nullable(Of Integer), ByVal Tipo As String) As Integer
+        Public Overloads Overridable Function Registrar(ByVal Nombre As String, ByVal Contacto As String, ByVal Zona As String, ByVal DPI As String, ByVal CorreoElectronico As String, ByVal Contraseña As String, ByVal Tipo As String) As Integer
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(1)
             If (Nombre Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(0).Value = CType(Nombre,String)
             End If
-            If (Contacto.HasValue = true) Then
-                command.Parameters(1).Value = CType(Contacto.Value,Integer)
-            Else
+            If (Contacto Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(Contacto,String)
             End If
             If (Zona Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(2).Value = CType(Zona,String)
             End If
-            command.Parameters(3).Value = CType(DPI,Integer)
+            If (DPI Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("DPI")
+            Else
+                command.Parameters(3).Value = CType(DPI,String)
+            End If
             If (CorreoElectronico Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(4).Value = CType(CorreoElectronico,String)
             End If
-            If (Contraseña.HasValue = true) Then
-                command.Parameters(5).Value = CType(Contraseña.Value,Integer)
-            Else
+            If (Contraseña Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(Contraseña,String)
             End If
             If (Tipo Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value

@@ -132,6 +132,9 @@
     <EmbeddedResource Include="Registros.resx">
       <DependentUpon>Registros.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Voluntarios.resx">
+      <DependentUpon>Voluntarios.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Base_Datos11DataSet.xsc">

@@ -9,11 +9,6 @@ Public Class Registros
 
     End Sub
 
-    Private Sub Registros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Base_Datos11DataSet.Usuarios' table. You can move, or remove it, as needed.
-        Me.UsuariosTableAdapter.Fill(Me.Base_Datos11DataSet.Usuarios)
-
-    End Sub
     Private Function Hash(contraseña As String)
         Dim UE As New UnicodeEncoding
         Dim bHash As Byte()
@@ -35,6 +30,9 @@ Public Class Registros
                 End If
             End If
         Next
+        If Not rbtnBeneficiario.Checked And Not rbtnVoluntario.Checked Then
+            Return False
+        End If
         Return True
     End Function
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -44,8 +42,22 @@ Public Class Registros
         End If
         If txtContra.Text = txtContraConf.Text Then
             Dim contraseña As String
+            Dim tipo As String
             contraseña = txtContra.Text
             contraseña = Hash(contraseña)
+            If rbtnBeneficiario.Checked Then
+                tipo = "Beneficiario"
+            Else
+                tipo = "Voluntario"
+            End If
+            Try
+                Me.UsuariosTableAdapter.Registrar(txtNombre.Text, txtContacto.Text, txtZona.Text, txtDpi.Text, txtCorreo.Text, contraseña, tipo)
+                Me.Hide()
+                ' En este momento deveria ir a las opciones de voluntario o de beneficiado
+                Form1.Show()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         Else
             MsgBox("Las contraseñas no coinciden, ingreselas nuevamente.")
         End If
