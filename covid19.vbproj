@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base_Datos11DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -95,16 +100,51 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Presupuestos.Designer.vb">
+      <DependentUpon>Presupuestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros.Designer.vb">
+      <DependentUpon>Registros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voluntarios.Designer.vb">
+      <DependentUpon>Voluntarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Voluntarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros.resx">
+      <DependentUpon>Registros.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Base_Datos11DataSet.xsc">
+      <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Base_Datos11DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Base_Datos11DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Base_Datos11DataSet.xss">
+      <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
