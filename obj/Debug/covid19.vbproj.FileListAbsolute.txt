@@ -25,3 +25,4 @@ C:\Users\LUBIA\Desktop\Covid19-Lab2\obj\Debug\covid19.vbproj.CoreCompileInputs.c
 C:\Users\LUBIA\Desktop\Covid19-Lab2\obj\Debug\covid19.exe
 C:\Users\LUBIA\Desktop\Covid19-Lab2\obj\Debug\covid19.xml
 C:\Users\LUBIA\Desktop\Covid19-Lab2\obj\Debug\covid19.pdb
+C:\Users\LUBIA\Desktop\Covid19-Lab2\obj\Debug\covid19.Inicio_de_sesion.resources

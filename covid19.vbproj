@@ -79,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Base_Datos11DataSet.vb">
+      <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +93,12 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Inicio de sesion.Designer.vb">
+      <DependentUpon>Inicio de sesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Inicio de sesion.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,6 +132,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Inicio de sesion.resx">
+      <DependentUpon>Inicio de sesion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

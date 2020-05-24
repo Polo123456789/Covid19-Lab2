@@ -9,7 +9,7 @@ Public Class Registros
 
     End Sub
 
-    Private Function Hash(contraseña As String)
+    Public Function Hash(contraseña As String)
         Dim UE As New UnicodeEncoding
         Dim bHash As Byte()
         'Almacena la cadena ingresada en una matriz de bytes
