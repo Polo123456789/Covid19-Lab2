@@ -82,6 +82,12 @@
     <Compile Include="Base_Datos11DataSet.vb">
       <DependentUpon>Base_Datos11DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Detalles_pedido.Designer.vb">
+      <DependentUpon>Detalles_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Detalles_pedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
