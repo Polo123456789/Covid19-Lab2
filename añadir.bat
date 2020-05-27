@@ -1,1 +1,3 @@
-FOR %%A IN (*) DO git add %%A 
+git add .
+git commit -m "Cambio"
+git push
