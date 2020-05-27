@@ -40,3 +40,7 @@ C:\Users\User\Desktop\covid19\Covid19-Lab2\obj\Debug\covid19.Resources.resources
 C:\Users\User\Desktop\covid19\Covid19-Lab2\obj\Debug\covid19.Registros.resources
 C:\Users\User\Desktop\covid19\Covid19-Lab2\obj\Debug\covid19.Voluntarios.resources
 C:\Users\User\Desktop\covid19\Covid19-Lab2\obj\Debug\covid19.vbproj.GenerateResource.Cache
+C:\Users\MISIFUS777\Desktop\New folder (2)\Covid19-Lab2\bin\Debug\covid19.exe.config
+C:\Users\MISIFUS777\Desktop\New folder (2)\Covid19-Lab2\obj\Debug\covid19.exe
+C:\Users\MISIFUS777\Desktop\New folder (2)\Covid19-Lab2\obj\Debug\covid19.xml
+C:\Users\MISIFUS777\Desktop\New folder (2)\Covid19-Lab2\obj\Debug\covid19.pdb
