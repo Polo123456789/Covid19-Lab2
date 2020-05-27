@@ -1,4 +1,4 @@
 git add .
-git commit -m "Se añadieron scripts para facilitar el trabajo con git"
+git commit -m "Se limpiaron archivos basura"
 git push
 PAUSE
