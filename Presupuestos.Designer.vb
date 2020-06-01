@@ -40,6 +40,9 @@ Partial Class Presupuestos
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.btnFinalizar = New System.Windows.Forms.Button()
+        Me.Btnbuscar = New System.Windows.Forms.Button()
+        Me.Btnagregar = New System.Windows.Forms.Button()
+        Me.Btnborrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblProductosLista
@@ -210,12 +213,42 @@ Partial Class Presupuestos
         Me.btnFinalizar.Text = "Finalizar"
         Me.btnFinalizar.UseVisualStyleBackColor = False
         '
+        'Btnbuscar
+        '
+        Me.Btnbuscar.Location = New System.Drawing.Point(689, 257)
+        Me.Btnbuscar.Name = "Btnbuscar"
+        Me.Btnbuscar.Size = New System.Drawing.Size(84, 38)
+        Me.Btnbuscar.TabIndex = 18
+        Me.Btnbuscar.Text = "Buscar"
+        Me.Btnbuscar.UseVisualStyleBackColor = True
+        '
+        'Btnagregar
+        '
+        Me.Btnagregar.Location = New System.Drawing.Point(689, 311)
+        Me.Btnagregar.Name = "Btnagregar"
+        Me.Btnagregar.Size = New System.Drawing.Size(84, 36)
+        Me.Btnagregar.TabIndex = 19
+        Me.Btnagregar.Text = "agregar"
+        Me.Btnagregar.UseVisualStyleBackColor = True
+        '
+        'Btnborrar
+        '
+        Me.Btnborrar.Location = New System.Drawing.Point(689, 353)
+        Me.Btnborrar.Name = "Btnborrar"
+        Me.Btnborrar.Size = New System.Drawing.Size(84, 38)
+        Me.Btnborrar.TabIndex = 20
+        Me.Btnborrar.Text = "Borrar"
+        Me.Btnborrar.UseVisualStyleBackColor = True
+        '
         'Presupuestos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ClientSize = New System.Drawing.Size(802, 468)
+        Me.Controls.Add(Me.Btnborrar)
+        Me.Controls.Add(Me.Btnagregar)
+        Me.Controls.Add(Me.Btnbuscar)
         Me.Controls.Add(Me.btnFinalizar)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.lblTotal)
@@ -258,4 +291,7 @@ Partial Class Presupuestos
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents txtTotal As System.Windows.Forms.TextBox
     Friend WithEvents btnFinalizar As System.Windows.Forms.Button
+    Friend WithEvents Btnbuscar As System.Windows.Forms.Button
+    Friend WithEvents Btnagregar As System.Windows.Forms.Button
+    Friend WithEvents Btnborrar As System.Windows.Forms.Button
 End Class

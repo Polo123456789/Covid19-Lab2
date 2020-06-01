@@ -116,6 +116,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="pedidosDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pedidosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presupuestos.Designer.vb">
       <DependentUpon>Presupuestos.vb</DependentUpon>
     </Compile>
@@ -183,6 +188,22 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="pedidosDataSet.xsc">
+      <DependentUpon>pedidosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pedidosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pedidosDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pedidosDataSet.xss">
+      <DependentUpon>pedidosDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pedidos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

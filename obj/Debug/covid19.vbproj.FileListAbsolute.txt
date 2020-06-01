@@ -61,3 +61,7 @@ C:\dev\Covid19-Lab2\bin\Debug\covid19.exe.config
 C:\dev\Covid19-Lab2\bin\Debug\covid19.exe
 C:\dev\Covid19-Lab2\bin\Debug\covid19.pdb
 C:\dev\Covid19-Lab2\bin\Debug\covid19.xml
+C:\Users\user\Desktop\covid-19\Covid19-Lab2\bin\Debug\covid19.exe.config
+C:\Users\user\Desktop\covid-19\Covid19-Lab2\obj\Debug\covid19.exe
+C:\Users\user\Desktop\covid-19\Covid19-Lab2\obj\Debug\covid19.xml
+C:\Users\user\Desktop\covid-19\Covid19-Lab2\obj\Debug\covid19.pdb
