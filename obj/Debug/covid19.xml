@@ -32,7 +32,17 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:covid19.Base_Datos11DataSet.PedidoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:covid19.Base_Datos11DataSet.UsuariosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:covid19.Base_Datos11DataSet.PedidoRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -42,7 +52,17 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
+<member name="T:covid19.Base_Datos11DataSet.PedidoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:covid19.Base_Datos11DataSetTableAdapters.UsuariosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

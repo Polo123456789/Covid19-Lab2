@@ -2,6 +2,7 @@
 Imports Environment
 
 Public Class Detalles_pedido
+    Dim Access As New DBControl
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim correo As String
         correo = Environment.GetEnvironmentVariable("mail")
@@ -33,5 +34,18 @@ Public Class Detalles_pedido
             MessageBox.Show(ex.ToString, "Error!", MessageBoxButtons.OK)
         End Try
 
+    End Sub
+
+    Private Sub Detalles_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Detalles_pedido_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Access.ExecQuery("Select * From " & Voluntarios.Tabla)
+        If Access.Exception = "" Then
+            detalles.DataSource = Access.DBDT
+        Else
+            MsgBox(Access.Exception)
+        End If
     End Sub
 End Class

@@ -22,11 +22,19 @@ Partial Class Voluntarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.pedidos = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Base_Datos11DataSet = New covid19.Base_Datos11DataSet()
+        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PedidoTableAdapter = New covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter()
+        Me.TableAdapterManager = New covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        CType(Me.pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -39,13 +47,13 @@ Partial Class Voluntarios
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Seleccionar pedido"
         '
-        'DataGridView1
+        'pedidos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(74, 96)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(658, 252)
-        Me.DataGridView1.TabIndex = 1
+        Me.pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.pedidos.Location = New System.Drawing.Point(74, 96)
+        Me.pedidos.Name = "pedidos"
+        Me.pedidos.Size = New System.Drawing.Size(658, 252)
+        Me.pedidos.TabIndex = 1
         '
         'Button1
         '
@@ -67,25 +75,61 @@ Partial Class Voluntarios
         Me.Button2.Text = "Cerrar"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Base_Datos11DataSet
+        '
+        Me.Base_Datos11DataSet.DataSetName = "Base_Datos11DataSet"
+        Me.Base_Datos11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PedidoBindingSource
+        '
+        Me.PedidoBindingSource.DataMember = "Pedido"
+        Me.PedidoBindingSource.DataSource = Me.Base_Datos11DataSet
+        '
+        'PedidoTableAdapter
+        '
+        Me.PedidoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PedidoTableAdapter = Me.PedidoTableAdapter
+        Me.TableAdapterManager.UpdateOrder = covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(630, 32)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 4
+        '
         'Voluntarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(872, 458)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.pedidos)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Voluntarios"
         Me.Text = "Voluntarios"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pedidos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents pedidos As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Base_Datos11DataSet As Base_Datos11DataSet
+    Friend WithEvents PedidoBindingSource As BindingSource
+    Friend WithEvents PedidoTableAdapter As Base_Datos11DataSetTableAdapters.PedidoTableAdapter
+    Friend WithEvents TableAdapterManager As Base_Datos11DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents TextBox1 As TextBox
 End Class

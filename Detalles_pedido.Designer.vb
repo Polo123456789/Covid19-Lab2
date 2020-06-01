@@ -40,9 +40,9 @@ Partial Class Detalles_pedido
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.detalles = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.detalles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox7
@@ -207,13 +207,13 @@ Partial Class Detalles_pedido
         Me.Button3.Text = "Cerrar"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'detalles
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(810, 75)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(391, 401)
-        Me.DataGridView1.TabIndex = 33
+        Me.detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.detalles.Location = New System.Drawing.Point(810, 75)
+        Me.detalles.Name = "detalles"
+        Me.detalles.Size = New System.Drawing.Size(391, 401)
+        Me.detalles.TabIndex = 33
         '
         'Label9
         '
@@ -231,7 +231,7 @@ Partial Class Detalles_pedido
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1232, 507)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.detalles)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
@@ -252,7 +252,7 @@ Partial Class Detalles_pedido
         Me.Controls.Add(Me.Label1)
         Me.Name = "Detalles_pedido"
         Me.Text = "Detalles_pedido"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.detalles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -276,6 +276,6 @@ Partial Class Detalles_pedido
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents detalles As DataGridView
     Friend WithEvents Label9 As Label
 End Class

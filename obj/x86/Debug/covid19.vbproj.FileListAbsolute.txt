@@ -1,0 +1,16 @@
+C:\dev\Covid19-Lab2\bin\x86\Debug\covid19.exe.config
+C:\dev\Covid19-Lab2\bin\x86\Debug\covid19.exe
+C:\dev\Covid19-Lab2\bin\x86\Debug\covid19.pdb
+C:\dev\Covid19-Lab2\bin\x86\Debug\covid19.xml
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Detalles_pedido.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Form1.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Inicio_de_sesion.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Resources.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Presupuestos.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Registros.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.Voluntarios.resources
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.vbproj.GenerateResource.cache
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.exe
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.xml
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.pdb
+C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.vbprojAssemblyReference.cache
