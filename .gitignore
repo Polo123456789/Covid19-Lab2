@@ -1,2 +1,5 @@
 *~
-.vs
+.vs/*
+.suo
+.vs/covid19/v16/Server/sqlite3/*
+
