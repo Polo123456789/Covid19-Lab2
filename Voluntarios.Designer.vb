@@ -31,7 +31,6 @@ Partial Class Voluntarios
         Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PedidoTableAdapter = New covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter()
         Me.TableAdapterManager = New covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,16 +48,17 @@ Partial Class Voluntarios
         '
         'pedidos
         '
+        Me.pedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.pedidos.Location = New System.Drawing.Point(74, 96)
+        Me.pedidos.Location = New System.Drawing.Point(60, 96)
         Me.pedidos.Name = "pedidos"
-        Me.pedidos.Size = New System.Drawing.Size(658, 252)
+        Me.pedidos.Size = New System.Drawing.Size(744, 252)
         Me.pedidos.TabIndex = 1
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(85, 381)
+        Me.Button1.Location = New System.Drawing.Point(118, 381)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(246, 57)
         Me.Button1.TabIndex = 2
@@ -96,19 +96,11 @@ Partial Class Voluntarios
         Me.TableAdapterManager.UpdateOrder = covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(630, 32)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 4
-        '
         'Voluntarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 458)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pedidos)
@@ -131,5 +123,4 @@ Partial Class Voluntarios
     Friend WithEvents PedidoBindingSource As BindingSource
     Friend WithEvents PedidoTableAdapter As Base_Datos11DataSetTableAdapters.PedidoTableAdapter
     Friend WithEvents TableAdapterManager As Base_Datos11DataSetTableAdapters.TableAdapterManager
-    Friend WithEvents TextBox1 As TextBox
 End Class

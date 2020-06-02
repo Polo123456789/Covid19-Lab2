@@ -71,18 +71,18 @@ Partial Class Registros
         ContactoLabel.AutoSize = True
         ContactoLabel.Location = New System.Drawing.Point(12, 46)
         ContactoLabel.Name = "ContactoLabel"
-        ContactoLabel.Size = New System.Drawing.Size(53, 13)
+        ContactoLabel.Size = New System.Drawing.Size(52, 13)
         ContactoLabel.TabIndex = 3
-        ContactoLabel.Text = "Contacto:"
+        ContactoLabel.Text = "Telefono:"
         '
         'ZonaLabel
         '
         ZonaLabel.AutoSize = True
         ZonaLabel.Location = New System.Drawing.Point(12, 72)
         ZonaLabel.Name = "ZonaLabel"
-        ZonaLabel.Size = New System.Drawing.Size(35, 13)
+        ZonaLabel.Size = New System.Drawing.Size(55, 13)
         ZonaLabel.TabIndex = 5
-        ZonaLabel.Text = "Zona:"
+        ZonaLabel.Text = "Direccion:"
         '
         'DPILabel
         '
@@ -228,6 +228,7 @@ Partial Class Registros
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PedidoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsuariosTableAdapter = Me.UsuariosTableAdapter
         '

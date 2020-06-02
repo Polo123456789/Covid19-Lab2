@@ -1,4 +1,5 @@
 ﻿Public Class Inicio_de_sesion
+    Public correo As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim DPI, Contraseña As String
 
@@ -7,13 +8,26 @@
 
         Try
             If Registros.Hash(Contraseña) = Me.UsuariosTableAdapter.Password(DPI) Then
-                MsgBox("Exito")
             Else
                 MsgBox("El DPI o la contraseña son incorrectos")
+                Return
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+        Dim tipo As String
+        tipo = Me.UsuariosTableAdapter.GetTipo(DPI)
+        correo = Me.UsuariosTableAdapter.GetEmail(DPI)
+
+        If tipo = "Beneficiario" Then
+            Me.Hide()
+            Presupuestos.Show()
+        Else
+            Me.Hide()
+            Voluntarios.Show()
+        End If
+
 
     End Sub
 
