@@ -9,14 +9,14 @@ Public Class Detalles_pedido
         Dim mensaje, br As String
         br = "<br>"
         mensaje = "Muy buen dia, es un gusto saludarle. Somos el equipo de Guatemala en casa" & br
-        mensaje += "El motivo de este correo es brindarle los detalles del pedido que tomo" & br
-        mensaje += "Este pedido es para: " & NombreTextBox.Text & " a quien puede encontrar en la siguiente direccion: " & ZonaTextBox.Text & br
-        mensaje += "Formato: Producto, cantidad" & br
+        mensaje += "El motivo de este correo es brindarle los detalles del pedido que tomo." & br
+        mensaje += "Este pedido es para: <em>" & NombreTextBox.Text & "</em> a quien puede encontrar en la siguiente direccion: <em>" & ZonaTextBox.Text & "</em>" & br & br
+        mensaje += "<strong>Formato:</strong> Producto, cantidad" & br
         For Each fila As DataRow In Access.DBDT.Rows
             mensaje += fila.Item(0).ToString & ", " & fila.Item(1).ToString & br
         Next
-        mensaje += "Gracias por el apoyo que nos brinda" & br
-        mensaje += "Att. El equipo de Guatemala en casa"
+        mensaje += "Le agradecemos el apoyo que nos brinda en estos tiempos de crisis" & br & br
+        mensaje += "<strong>Att. El equipo de Guatemala en casa</strong>"
         Return mensaje
     End Function
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -49,7 +49,7 @@ Public Class Detalles_pedido
 
         Try
             SMTP.Send(Mensaje)
-            MessageBox.Show("Mensaje enviado correctamente", "Politecnia", MessageBoxButtons.OK)
+            MessageBox.Show("Mensaje enviado correctamente", "Guatemala en casa", MessageBoxButtons.OK)
         Catch ex As System.Net.Mail.SmtpException
             MessageBox.Show(ex.ToString, "Error!", MessageBoxButtons.OK)
         End Try
