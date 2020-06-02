@@ -1,4 +1,4 @@
 git add .
-git commit -m "Se añadio un campo al pedido :D"
+git commit -m "Se corrigieron errores en la base de datos :D"
 git push
 PAUSE
