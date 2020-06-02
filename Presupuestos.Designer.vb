@@ -43,6 +43,8 @@ Partial Class Presupuestos
         Me.Btnbuscar = New System.Windows.Forms.Button()
         Me.Btnagregar = New System.Windows.Forms.Button()
         Me.Btnborrar = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblProductosLista
@@ -97,7 +99,7 @@ Partial Class Presupuestos
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(26, 167)
+        Me.lblNombre.Location = New System.Drawing.Point(24, 192)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(173, 30)
         Me.lblNombre.TabIndex = 5
@@ -107,7 +109,7 @@ Partial Class Presupuestos
         '
         Me.lblCantidad.AutoSize = True
         Me.lblCantidad.Font = New System.Drawing.Font("Gill Sans MT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantidad.Location = New System.Drawing.Point(218, 164)
+        Me.lblCantidad.Location = New System.Drawing.Point(216, 189)
         Me.lblCantidad.Name = "lblCantidad"
         Me.lblCantidad.Size = New System.Drawing.Size(101, 34)
         Me.lblCantidad.TabIndex = 6
@@ -117,7 +119,7 @@ Partial Class Presupuestos
         '
         Me.lblPrecioU.AutoSize = True
         Me.lblPrecioU.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecioU.Location = New System.Drawing.Point(335, 164)
+        Me.lblPrecioU.Location = New System.Drawing.Point(333, 189)
         Me.lblPrecioU.Name = "lblPrecioU"
         Me.lblPrecioU.Size = New System.Drawing.Size(132, 30)
         Me.lblPrecioU.TabIndex = 7
@@ -127,7 +129,7 @@ Partial Class Presupuestos
         '
         Me.lblSubtotal.AutoSize = True
         Me.lblSubtotal.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSubtotal.Location = New System.Drawing.Point(511, 164)
+        Me.lblSubtotal.Location = New System.Drawing.Point(509, 189)
         Me.lblSubtotal.Name = "lblSubtotal"
         Me.lblSubtotal.Size = New System.Drawing.Size(85, 30)
         Me.lblSubtotal.TabIndex = 8
@@ -137,7 +139,7 @@ Partial Class Presupuestos
         '
         Me.lblLugar.AutoSize = True
         Me.lblLugar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLugar.Location = New System.Drawing.Point(634, 164)
+        Me.lblLugar.Location = New System.Drawing.Point(632, 189)
         Me.lblLugar.Name = "lblLugar"
         Me.lblLugar.Size = New System.Drawing.Size(158, 30)
         Me.lblLugar.TabIndex = 9
@@ -146,7 +148,7 @@ Partial Class Presupuestos
         'lstNombre
         '
         Me.lstNombre.FormattingEnabled = True
-        Me.lstNombre.Location = New System.Drawing.Point(33, 200)
+        Me.lstNombre.Location = New System.Drawing.Point(31, 225)
         Me.lstNombre.Name = "lstNombre"
         Me.lstNombre.Size = New System.Drawing.Size(166, 147)
         Me.lstNombre.TabIndex = 10
@@ -154,7 +156,7 @@ Partial Class Presupuestos
         'lstCantidad
         '
         Me.lstCantidad.FormattingEnabled = True
-        Me.lstCantidad.Location = New System.Drawing.Point(224, 200)
+        Me.lstCantidad.Location = New System.Drawing.Point(222, 225)
         Me.lstCantidad.Name = "lstCantidad"
         Me.lstCantidad.Size = New System.Drawing.Size(103, 147)
         Me.lstCantidad.TabIndex = 11
@@ -162,7 +164,7 @@ Partial Class Presupuestos
         'lstPrecio
         '
         Me.lstPrecio.FormattingEnabled = True
-        Me.lstPrecio.Location = New System.Drawing.Point(340, 200)
+        Me.lstPrecio.Location = New System.Drawing.Point(338, 225)
         Me.lstPrecio.Name = "lstPrecio"
         Me.lstPrecio.Size = New System.Drawing.Size(127, 147)
         Me.lstPrecio.TabIndex = 12
@@ -170,7 +172,7 @@ Partial Class Presupuestos
         'lstSubtotal
         '
         Me.lstSubtotal.FormattingEnabled = True
-        Me.lstSubtotal.Location = New System.Drawing.Point(494, 200)
+        Me.lstSubtotal.Location = New System.Drawing.Point(492, 225)
         Me.lstSubtotal.Name = "lstSubtotal"
         Me.lstSubtotal.Size = New System.Drawing.Size(120, 147)
         Me.lstSubtotal.TabIndex = 13
@@ -178,7 +180,7 @@ Partial Class Presupuestos
         'cmbLugar
         '
         Me.cmbLugar.FormattingEnabled = True
-        Me.cmbLugar.Location = New System.Drawing.Point(652, 200)
+        Me.cmbLugar.Location = New System.Drawing.Point(650, 225)
         Me.cmbLugar.Name = "cmbLugar"
         Me.cmbLugar.Size = New System.Drawing.Size(121, 21)
         Me.cmbLugar.TabIndex = 14
@@ -187,7 +189,7 @@ Partial Class Presupuestos
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(388, 366)
+        Me.lblTotal.Location = New System.Drawing.Point(386, 391)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(100, 39)
         Me.lblTotal.TabIndex = 15
@@ -195,7 +197,7 @@ Partial Class Presupuestos
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(494, 366)
+        Me.txtTotal.Location = New System.Drawing.Point(492, 391)
         Me.txtTotal.Multiline = True
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(120, 39)
@@ -206,7 +208,7 @@ Partial Class Presupuestos
         Me.btnFinalizar.BackColor = System.Drawing.Color.LightSkyBlue
         Me.btnFinalizar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinalizar.ForeColor = System.Drawing.Color.Black
-        Me.btnFinalizar.Location = New System.Drawing.Point(652, 416)
+        Me.btnFinalizar.Location = New System.Drawing.Point(650, 441)
         Me.btnFinalizar.Name = "btnFinalizar"
         Me.btnFinalizar.Size = New System.Drawing.Size(137, 40)
         Me.btnFinalizar.TabIndex = 17
@@ -215,7 +217,7 @@ Partial Class Presupuestos
         '
         'Btnbuscar
         '
-        Me.Btnbuscar.Location = New System.Drawing.Point(689, 257)
+        Me.Btnbuscar.Location = New System.Drawing.Point(687, 282)
         Me.Btnbuscar.Name = "Btnbuscar"
         Me.Btnbuscar.Size = New System.Drawing.Size(84, 38)
         Me.Btnbuscar.TabIndex = 18
@@ -224,7 +226,7 @@ Partial Class Presupuestos
         '
         'Btnagregar
         '
-        Me.Btnagregar.Location = New System.Drawing.Point(689, 311)
+        Me.Btnagregar.Location = New System.Drawing.Point(687, 336)
         Me.Btnagregar.Name = "Btnagregar"
         Me.Btnagregar.Size = New System.Drawing.Size(84, 36)
         Me.Btnagregar.TabIndex = 19
@@ -233,19 +235,39 @@ Partial Class Presupuestos
         '
         'Btnborrar
         '
-        Me.Btnborrar.Location = New System.Drawing.Point(689, 353)
+        Me.Btnborrar.Location = New System.Drawing.Point(687, 378)
         Me.Btnborrar.Name = "Btnborrar"
         Me.Btnborrar.Size = New System.Drawing.Size(84, 38)
         Me.Btnborrar.TabIndex = 20
         Me.Btnborrar.Text = "Borrar"
         Me.Btnborrar.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(287, 165)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 22
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(269, 132)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(172, 30)
+        Me.Label2.TabIndex = 23
+        Me.Label2.Text = "Registro producto"
+        '
         'Presupuestos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(802, 468)
+        Me.ClientSize = New System.Drawing.Size(842, 517)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Btnborrar)
         Me.Controls.Add(Me.Btnagregar)
         Me.Controls.Add(Me.Btnbuscar)
@@ -294,4 +316,6 @@ Partial Class Presupuestos
     Friend WithEvents Btnbuscar As System.Windows.Forms.Button
     Friend WithEvents Btnagregar As System.Windows.Forms.Button
     Friend WithEvents Btnborrar As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
