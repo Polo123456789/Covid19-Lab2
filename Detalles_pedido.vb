@@ -57,14 +57,20 @@ Public Class Detalles_pedido
     End Sub
 
     Private Sub Detalles_pedido_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Me.PedidoTableAdapter.FillByPedido(Me.Base_Datos11DataSet.Pedido, Voluntarios.NumPedido)
-        Me.UsuariosTableAdapter.FillByDPI(Me.Base_Datos11DataSet.Usuarios, Val(Me.Base_Datos11DataSet.Pedido.Rows(0).Item(4).ToString))
-        Access.ExecQuery("Select Producto, Cantidad FROM " & Me.Base_Datos11DataSet.Pedido.Rows(0).Item(1).ToString)
-        If Access.Exception = "" Then
-            detalles.DataSource = Access.DBDT
-        Else
-            MsgBox(Access.Exception)
-        End If
+        Try
+            Me.PedidoTableAdapter.FillByPedido(Me.Base_Datos11DataSet.Pedido, Voluntarios.NumPedido)
+            Me.UsuariosTableAdapter.FillByDPI(Me.Base_Datos11DataSet.Usuarios, Me.Base_Datos11DataSet.Pedido.Rows(0).Item(4).ToString)
+            Access.ExecQuery("Select Producto, Cantidad FROM " & Me.Base_Datos11DataSet.Pedido.Rows(0).Item(1).ToString)
+            If Access.Exception = "" Then
+                detalles.DataSource = Access.DBDT
+            Else
+                MsgBox(Access.Exception)
+            End If
+        Catch ex As Exception
+            MsgBox("Seleccione unicamente el numero del pedido")
+            Me.Hide()
+            Voluntarios.Show()
+        End Try
     End Sub
 
     Private Sub PedidoBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -94,5 +100,9 @@ Public Class Detalles_pedido
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         End
+    End Sub
+
+    Private Sub Detalles_pedido_Click(sender As Object, e As EventArgs) Handles Me.Click
+
     End Sub
 End Class

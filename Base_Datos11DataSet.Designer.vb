@@ -786,7 +786,7 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddPedidoRow(ByVal Numero_de_Pedido As Integer, ByVal Pedido As String, ByVal Precio As Decimal, ByVal Fecha As Date, ByVal DPI As String) As PedidoRow
+        Public Overloads Function AddPedidoRow(ByVal Numero_de_Pedido As Integer, ByVal Pedido As String, ByVal Precio As String, ByVal Fecha As Date, ByVal DPI As String) As PedidoRow
             Dim rowPedidoRow As PedidoRow = CType(Me.NewRow,PedidoRow)
             Dim columnValuesArray() As Object = New Object() {Numero_de_Pedido, Pedido, Precio, Fecha, DPI}
             rowPedidoRow.ItemArray = columnValuesArray
@@ -831,7 +831,7 @@ Partial Public Class Base_Datos11DataSet
             MyBase.Columns.Add(Me.columnNumero_de_Pedido)
             Me.columnPedido = New Global.System.Data.DataColumn("Pedido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPedido)
-            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrecio)
             Me.columnFecha = New Global.System.Data.DataColumn("Fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFecha)
@@ -1203,10 +1203,10 @@ Partial Public Class Base_Datos11DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Precio() As Decimal
+        Public Property Precio() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablePedido.PrecioColumn),Decimal)
+                    Return CType(Me(Me.tablePedido.PrecioColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Precio' in table 'Pedido' is DBNull.", e)
                 End Try
@@ -2323,7 +2323,7 @@ Namespace Base_Datos11DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy(ByVal Numero_de_Pedido As Integer) As Base_Datos11DataSet.PedidoDataTable
+        Public Overloads Overridable Function GetDataBy1(ByVal Numero_de_Pedido As Integer) As Base_Datos11DataSet.PedidoDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Numero_de_Pedido,Integer)
             Dim dataTable As Base_Datos11DataSet.PedidoDataTable = New Base_Datos11DataSet.PedidoDataTable()
