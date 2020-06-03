@@ -1,4 +1,4 @@
 git add .
-git commit -m "Se corrigieron errores en la base de datos :D"
+git commit -m "Configuracion x86"
 git push
 PAUSE

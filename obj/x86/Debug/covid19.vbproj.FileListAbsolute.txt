@@ -14,3 +14,4 @@ C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.exe
 C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.xml
 C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.pdb
 C:\dev\Covid19-Lab2\obj\x86\Debug\covid19.vbprojAssemblyReference.cache
+C:\dev\Covid19-Lab2\bin\x86\Debug\Presupuesto.accdb

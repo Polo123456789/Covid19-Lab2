@@ -13,3 +13,4 @@ C:\dev\Covid19-Lab2\obj\x64\Debug\covid19.vbproj.GenerateResource.cache
 C:\dev\Covid19-Lab2\obj\x64\Debug\covid19.exe
 C:\dev\Covid19-Lab2\obj\x64\Debug\covid19.xml
 C:\dev\Covid19-Lab2\obj\x64\Debug\covid19.pdb
+C:\dev\Covid19-Lab2\bin\x64\Debug\Presupuesto.accdb
