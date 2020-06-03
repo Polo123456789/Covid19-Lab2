@@ -6,105 +6,222 @@ covid19
 </name>
 </assembly>
 <members>
-<member name="T:covid19.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+<member name="T:covid19.PresupuestoDataSet1.LugaresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
 </summary>
-</member>
-<member name="P:covid19.My.Resources.Resources.ResourceManager">
-<summary>
+</member><member name="T:covid19.PresupuestoDataSet1.ProductosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1.LugaresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1.ProductosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1.LugaresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1.ProductosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1TableAdapters.LugaresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1TableAdapters.ProductosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(covid19.PresupuestoDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(covid19.PresupuestoDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(covid19.PresupuestoDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.UpdateAll(covid19.PresupuestoDataSet1)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet1TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.LugaresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.ProductosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.LugaresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.ProductosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.LugaresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet.ProductosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.PresupuestoDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSetTableAdapters.LugaresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSetTableAdapters.ProductosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(covid19.PresupuestoDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(covid19.PresupuestoDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(covid19.PresupuestoDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.UpdateAll(covid19.PresupuestoDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:covid19.PresupuestoDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.UsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.PedidoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.UsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.PedidoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.UsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet.PedidoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSetTableAdapters.UsuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateAll(covid19.Base_Datos11DataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:covid19.My.Resources.Resources.ResourceManager">
+	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member>
-<member name="P:covid19.My.Resources.Resources.Culture">
-<summary>
+</member><member name="P:covid19.My.Resources.Resources.Culture">
+	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet">
-<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.UsuariosDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.PedidoDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.UsuariosRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.PedidoRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.UsuariosRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSet.PedidoRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSetTableAdapters.UsuariosTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager">
-<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member>
-<member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-<summary>
-Update rows in top-down order.
-</summary>
-</member>
-<member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow})">
-<summary>
-Insert rows in top-down order.
-</summary>
-</member>
-<member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(covid19.Base_Datos11DataSet,System.Collections.Generic.List{System.Data.DataRow})">
-<summary>
-Delete rows in bottom-up order.
-</summary>
-</member>
-<member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member>
-<member name="M:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateAll(covid19.Base_Datos11DataSet)">
-<summary>
-Update all changes to the dataset.
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
-<summary>
-Update Order Option
-</summary>
-</member>
-<member name="T:covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
-<summary>
-Used to sort self-referenced table's rows
+</member><member name="T:covid19.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>

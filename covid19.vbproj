@@ -138,6 +138,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PresupuestoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresupuestoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PresupuestoDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presupuestos.Designer.vb">
       <DependentUpon>Presupuestos.vb</DependentUpon>
     </Compile>
@@ -205,6 +215,33 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="PresupuestoDataSet.xsc">
+      <DependentUpon>PresupuestoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PresupuestoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PresupuestoDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PresupuestoDataSet.xss">
+      <DependentUpon>PresupuestoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PresupuestoDataSet1.xsc">
+      <DependentUpon>PresupuestoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PresupuestoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PresupuestoDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PresupuestoDataSet1.xss">
+      <DependentUpon>PresupuestoDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Presupuesto.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

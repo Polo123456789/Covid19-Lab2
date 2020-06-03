@@ -22,6 +22,7 @@ Partial Class Presupuestos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblProductosLista = New System.Windows.Forms.Label()
         Me.lblPresupuesto = New System.Windows.Forms.Label()
         Me.lblNoPedido = New System.Windows.Forms.Label()
@@ -43,8 +44,30 @@ Partial Class Presupuestos
         Me.Btnbuscar = New System.Windows.Forms.Button()
         Me.Btnagregar = New System.Windows.Forms.Button()
         Me.Btnborrar = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.registroproducto = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PresupuestoDataSet = New covid19.PresupuestoDataSet()
+        Me.PresupuestoDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PresupuestoDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosTableAdapter = New covid19.PresupuestoDataSetTableAdapters.ProductosTableAdapter()
+        Me.PresupuestoDataSetBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LugaresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LugaresTableAdapter = New covid19.PresupuestoDataSetTableAdapters.LugaresTableAdapter()
+        Me.PresupuestoDataSetBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductosBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LugaresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.PresupuestoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PresupuestoDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PresupuestoDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PresupuestoDataSetBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LugaresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PresupuestoDataSetBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductosBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LugaresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProductosLista
@@ -179,11 +202,14 @@ Partial Class Presupuestos
         '
         'cmbLugar
         '
+        Me.cmbLugar.DataSource = Me.LugaresBindingSource1
+        Me.cmbLugar.DisplayMember = "Lugar"
         Me.cmbLugar.FormattingEnabled = True
         Me.cmbLugar.Location = New System.Drawing.Point(650, 225)
         Me.cmbLugar.Name = "cmbLugar"
         Me.cmbLugar.Size = New System.Drawing.Size(121, 21)
         Me.cmbLugar.TabIndex = 14
+        Me.cmbLugar.ValueMember = "Id_Lugar"
         '
         'lblTotal
         '
@@ -242,13 +268,16 @@ Partial Class Presupuestos
         Me.Btnborrar.Text = "Borrar"
         Me.Btnborrar.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'registroproducto
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(287, 165)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 22
+        Me.registroproducto.DataSource = Me.ProductosBindingSource2
+        Me.registroproducto.DisplayMember = "Nombre"
+        Me.registroproducto.FormattingEnabled = True
+        Me.registroproducto.Location = New System.Drawing.Point(287, 165)
+        Me.registroproducto.Name = "registroproducto"
+        Me.registroproducto.Size = New System.Drawing.Size(121, 21)
+        Me.registroproducto.TabIndex = 22
+        Me.registroproducto.ValueMember = "Id"
         '
         'Label2
         '
@@ -260,6 +289,64 @@ Partial Class Presupuestos
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Registro producto"
         '
+        'PresupuestoDataSet
+        '
+        Me.PresupuestoDataSet.DataSetName = "PresupuestoDataSet"
+        Me.PresupuestoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PresupuestoDataSetBindingSource
+        '
+        Me.PresupuestoDataSetBindingSource.DataSource = Me.PresupuestoDataSet
+        Me.PresupuestoDataSetBindingSource.Position = 0
+        '
+        'PresupuestoDataSetBindingSource1
+        '
+        Me.PresupuestoDataSetBindingSource1.DataSource = Me.PresupuestoDataSet
+        Me.PresupuestoDataSetBindingSource1.Position = 0
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "Productos"
+        Me.ProductosBindingSource.DataSource = Me.PresupuestoDataSet
+        '
+        'ProductosTableAdapter
+        '
+        Me.ProductosTableAdapter.ClearBeforeFill = True
+        '
+        'PresupuestoDataSetBindingSource2
+        '
+        Me.PresupuestoDataSetBindingSource2.DataSource = Me.PresupuestoDataSet
+        Me.PresupuestoDataSetBindingSource2.Position = 0
+        '
+        'ProductosBindingSource1
+        '
+        Me.ProductosBindingSource1.DataMember = "Productos"
+        Me.ProductosBindingSource1.DataSource = Me.PresupuestoDataSet
+        '
+        'LugaresBindingSource
+        '
+        Me.LugaresBindingSource.DataMember = "Lugares"
+        Me.LugaresBindingSource.DataSource = Me.PresupuestoDataSet
+        '
+        'LugaresTableAdapter
+        '
+        Me.LugaresTableAdapter.ClearBeforeFill = True
+        '
+        'PresupuestoDataSetBindingSource3
+        '
+        Me.PresupuestoDataSetBindingSource3.DataSource = Me.PresupuestoDataSet
+        Me.PresupuestoDataSetBindingSource3.Position = 0
+        '
+        'ProductosBindingSource2
+        '
+        Me.ProductosBindingSource2.DataMember = "Productos"
+        Me.ProductosBindingSource2.DataSource = Me.PresupuestoDataSet
+        '
+        'LugaresBindingSource1
+        '
+        Me.LugaresBindingSource1.DataMember = "Lugares"
+        Me.LugaresBindingSource1.DataSource = Me.PresupuestoDataSet
+        '
         'Presupuestos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,7 +354,7 @@ Partial Class Presupuestos
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 517)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.registroproducto)
         Me.Controls.Add(Me.Btnborrar)
         Me.Controls.Add(Me.Btnagregar)
         Me.Controls.Add(Me.Btnbuscar)
@@ -291,6 +378,16 @@ Partial Class Presupuestos
         Me.Controls.Add(Me.lblProductosLista)
         Me.Name = "Presupuestos"
         Me.Text = "Presupuestos"
+        CType(Me.PresupuestoDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PresupuestoDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PresupuestoDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PresupuestoDataSetBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LugaresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PresupuestoDataSetBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LugaresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -316,6 +413,18 @@ Partial Class Presupuestos
     Friend WithEvents Btnbuscar As System.Windows.Forms.Button
     Friend WithEvents Btnagregar As System.Windows.Forms.Button
     Friend WithEvents Btnborrar As System.Windows.Forms.Button
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents registroproducto As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PresupuestoDataSet As covid19.PresupuestoDataSet
+    Friend WithEvents PresupuestoDataSetBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PresupuestoDataSetBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents ProductosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ProductosTableAdapter As covid19.PresupuestoDataSetTableAdapters.ProductosTableAdapter
+    Friend WithEvents ProductosBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents PresupuestoDataSetBindingSource2 As System.Windows.Forms.BindingSource
+    Friend WithEvents LugaresBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents LugaresTableAdapter As covid19.PresupuestoDataSetTableAdapters.LugaresTableAdapter
+    Friend WithEvents ProductosBindingSource2 As System.Windows.Forms.BindingSource
+    Friend WithEvents PresupuestoDataSetBindingSource3 As System.Windows.Forms.BindingSource
+    Friend WithEvents LugaresBindingSource1 As System.Windows.Forms.BindingSource
 End Class
