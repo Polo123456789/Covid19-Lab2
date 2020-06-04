@@ -12,7 +12,7 @@ Public Class Presupuestos
 
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbLugar.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs)
 
     End Sub
 
@@ -69,43 +69,40 @@ Public Class Presupuestos
             End If
 
 
+
+            For producto As Integer = 0 To lstNombre.Items.Count - 1
+                If Not access.ingresar_producto(producto, lstNombre.Items(producto), Val(lstCantidad.Items(producto)), Inicio_de_sesion.nombre) Then
+                    MsgBox(access.Exception)
+                    Return
+
+                End If
+
+            Next
+
+
+            MsgBox("Se ha realizado el pedido, espere a ser contactado por uno de los voluntarios")
+            Me.Hide()
+            Inicio_de_sesion.Show()
         End If
 
-        For producto As Integer = 0 To lstNombre.Items.Count - 1
-            If Not access.ingresar_producto(producto, lstNombre.Items(producto), Val(lstCantidad.Items(producto)), Inicio_de_sesion.nombre) Then
-                MsgBox(access.Exception)
-                Return
-
-            End If
-
-        Next
-
-        MsgBox("Se ha realizado el pedido, espere a ser contactado por uno de los voluntarios")
-        Me.Hide()
-        Inicio_de_sesion.Show()
     End Sub
 
     Private Sub Btnborrar_Click(sender As System.Object, e As System.EventArgs) Handles Btnborrar.Click
         Try
             ultimoenlista = lstCantidad.Items.Count - 1
-            xsubtotal = (Val(lstPrecio.Items(ultimoenlista))) * Val(lstCantidad.Items(ultimoenlista))
-            xtotal = xtotal - xsubtotal
-            txtTotal.Text = xtotal
+            If ultimoenlista >= 0 Then
+                xsubtotal = (Val(lstPrecio.Items(ultimoenlista))) * Val(lstCantidad.Items(ultimoenlista))
+                xtotal = xtotal - xsubtotal
+                txtTotal.Text = xtotal
 
-            ultimoenlista = lstCantidad.Items.Count - 1
-            lstCantidad.Items.RemoveAt(ultimoenlista)
+                lstNombre.Items.RemoveAt(ultimoenlista)
+                lstPrecio.Items.RemoveAt(ultimoenlista)
+                lstSubtotal.Items.RemoveAt(ultimoenlista)
+                lstCantidad.Items.RemoveAt(ultimoenlista)
+            Else
+                MsgBox("No puede borrar datos de una lista vacia")
 
-            ultimoenlista = lstNombre.Items.Count - 1
-            lstNombre.Items.RemoveAt(ultimoenlista)
-
-            ultimoenlista = lstPrecio.Items.Count - 1
-            lstPrecio.Items.RemoveAt(ultimoenlista)
-
-            ultimoenlista = lstSubtotal.Items.Count - 1
-            lstSubtotal.Items.RemoveAt(ultimoenlista)
-
-            ultimoenlista = lstCantidad.Items.Count - 1
-            lstCantidad.Items.RemoveAt(ultimoenlista)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

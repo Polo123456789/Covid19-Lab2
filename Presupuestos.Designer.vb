@@ -30,11 +30,9 @@ Partial Class Presupuestos
         Me.lblCantidad = New System.Windows.Forms.Label()
         Me.lblPrecioU = New System.Windows.Forms.Label()
         Me.lblSubtotal = New System.Windows.Forms.Label()
-        Me.lblLugar = New System.Windows.Forms.Label()
         Me.lstNombre = New System.Windows.Forms.ListBox()
         Me.lstCantidad = New System.Windows.Forms.ListBox()
         Me.lstSubtotal = New System.Windows.Forms.ListBox()
-        Me.cmbLugar = New System.Windows.Forms.ComboBox()
         Me.LugaresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.PresupuestoDataSet = New covid19.PresupuestoDataSet()
         Me.lblTotal = New System.Windows.Forms.Label()
@@ -146,16 +144,6 @@ Partial Class Presupuestos
         Me.lblSubtotal.TabIndex = 8
         Me.lblSubtotal.Text = "Subtotal"
         '
-        'lblLugar
-        '
-        Me.lblLugar.AutoSize = True
-        Me.lblLugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLugar.Location = New System.Drawing.Point(629, 256)
-        Me.lblLugar.Name = "lblLugar"
-        Me.lblLugar.Size = New System.Drawing.Size(174, 25)
-        Me.lblLugar.TabIndex = 9
-        Me.lblLugar.Text = "Lugar de compra"
-        '
         'lstNombre
         '
         Me.lstNombre.FormattingEnabled = True
@@ -179,17 +167,6 @@ Partial Class Presupuestos
         Me.lstSubtotal.Name = "lstSubtotal"
         Me.lstSubtotal.Size = New System.Drawing.Size(120, 147)
         Me.lstSubtotal.TabIndex = 13
-        '
-        'cmbLugar
-        '
-        Me.cmbLugar.DataSource = Me.LugaresBindingSource1
-        Me.cmbLugar.DisplayMember = "Lugar"
-        Me.cmbLugar.FormattingEnabled = True
-        Me.cmbLugar.Location = New System.Drawing.Point(647, 292)
-        Me.cmbLugar.Name = "cmbLugar"
-        Me.cmbLugar.Size = New System.Drawing.Size(121, 21)
-        Me.cmbLugar.TabIndex = 14
-        Me.cmbLugar.ValueMember = "Id_Lugar"
         '
         'LugaresBindingSource1
         '
@@ -390,12 +367,10 @@ Partial Class Presupuestos
         Me.Controls.Add(Me.btnFinalizar)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.lblTotal)
-        Me.Controls.Add(Me.cmbLugar)
         Me.Controls.Add(Me.lstSubtotal)
         Me.Controls.Add(Me.lstPrecio)
         Me.Controls.Add(Me.lstCantidad)
         Me.Controls.Add(Me.lstNombre)
-        Me.Controls.Add(Me.lblLugar)
         Me.Controls.Add(Me.lblSubtotal)
         Me.Controls.Add(Me.lblPrecioU)
         Me.Controls.Add(Me.lblCantidad)
@@ -429,11 +404,9 @@ Partial Class Presupuestos
     Friend WithEvents lblCantidad As System.Windows.Forms.Label
     Friend WithEvents lblPrecioU As System.Windows.Forms.Label
     Friend WithEvents lblSubtotal As System.Windows.Forms.Label
-    Friend WithEvents lblLugar As System.Windows.Forms.Label
     Friend WithEvents lstNombre As System.Windows.Forms.ListBox
     Friend WithEvents lstCantidad As System.Windows.Forms.ListBox
     Friend WithEvents lstSubtotal As System.Windows.Forms.ListBox
-    Friend WithEvents cmbLugar As System.Windows.Forms.ComboBox
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents txtTotal As System.Windows.Forms.TextBox
     Friend WithEvents btnFinalizar As System.Windows.Forms.Button
