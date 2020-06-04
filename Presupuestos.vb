@@ -34,19 +34,35 @@ Public Class Presupuestos
     End Sub
 
     Private Sub Btnagregar_Click(sender As System.Object, e As System.EventArgs) Handles Btnagregar.Click
-        
-        lstNombre.Items.Add(registroproducto.Text)
-        lstPrecio.Items.Add(TextBox1PrecioU.Text)
-        lstCantidad.Items.Add(txtCantidad.Text)
-        xsubtotal = (Val(TextBox1PrecioU.Text) * Val(txtCantidad.Text))
-        lstSubtotal.Items.Add(xsubtotal)
+        If txtCantidad.Text = "" Then
+            MsgBox("Tiene que ingresar una cantidad del producto")
+            Return
+        ElseIf Not IsNumeric(txtCantidad.Text) Then
+            MsgBox("Ingrese una cantidad numerica")
+            Return
+        End If
 
-        xtotal = xtotal + xsubtotal
-        txtTotal.Text = xtotal
+        Try
+            lstNombre.Items.Add(registroproducto.Text)
+            lstPrecio.Items.Add(TextBox1PrecioU.Text)
+            lstCantidad.Items.Add(txtCantidad.Text)
+            xsubtotal = (Val(TextBox1PrecioU.Text) * Val(txtCantidad.Text))
+            lstSubtotal.Items.Add(xsubtotal)
+
+            xtotal = xtotal + xsubtotal
+            txtTotal.Text = xtotal
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
     Private Sub btnFinalizar_Click(sender As System.Object, e As System.EventArgs) Handles btnFinalizar.Click
+
+        If lstCantidad.Items.Count = 0 Then
+            MsgBox("Tiene que ingresar productos antes de poder realizar el pedido")
+            Return
+        End If
 
         Try
             Me.PedidoTableAdapter.LimpiarPedido(Inicio_de_sesion.nombre)

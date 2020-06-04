@@ -190,6 +190,7 @@ Partial Class Presupuestos
         '
         'txtTotal
         '
+        Me.txtTotal.Enabled = False
         Me.txtTotal.Location = New System.Drawing.Point(489, 458)
         Me.txtTotal.Multiline = True
         Me.txtTotal.Name = "txtTotal"
