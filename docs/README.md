@@ -4,7 +4,7 @@ Ante la crisis que estamos viviendo a nivel mundial por la pandemia, Covid-19, n
 >  En los momentos de crisis te damos ayuda especial para alguien especial
 
 ### Manual
-[Manual_de_Usuario.pdf]("Manual_de_Usuario.pdf")
+[Manual_de_Usuario.pdf](https://github.com/Polo123456789/Covid19-Lab2/blob/master/docs/Manual_de_Usuario.pdf)
 
 ### Reportes de erroes 
 [Puede reportar cualquier bug aqui](https://github.com/Polo123456789/Covid19-Lab2/issues)
