@@ -36,21 +36,21 @@ Partial Class Detalles_pedido
         Me.detalles = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Base_Datos11DataSet = New covid19.Base_Datos11DataSet()
         Me.Numero_de_PedidoTextBox = New System.Windows.Forms.TextBox()
         Me.PrecioTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
+        Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContactoTextBox = New System.Windows.Forms.TextBox()
         Me.ZonaTextBox = New System.Windows.Forms.TextBox()
-        Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Base_Datos11DataSet = New covid19.Base_Datos11DataSet()
-        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PedidoTableAdapter = New covid19.Base_Datos11DataSetTableAdapters.PedidoTableAdapter()
         Me.TableAdapterManager = New covid19.Base_Datos11DataSetTableAdapters.TableAdapterManager()
         Me.UsuariosTableAdapter = New covid19.Base_Datos11DataSetTableAdapters.UsuariosTableAdapter()
         CType(Me.detalles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -160,6 +160,7 @@ Partial Class Detalles_pedido
         Me.detalles.Enabled = False
         Me.detalles.Location = New System.Drawing.Point(809, 75)
         Me.detalles.Name = "detalles"
+        Me.detalles.ReadOnly = True
         Me.detalles.Size = New System.Drawing.Size(391, 401)
         Me.detalles.TabIndex = 33
         '
@@ -181,6 +182,16 @@ Partial Class Detalles_pedido
         Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
         Me.FechaDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaDateTimePicker.TabIndex = 35
+        '
+        'PedidoBindingSource
+        '
+        Me.PedidoBindingSource.DataMember = "Pedido"
+        Me.PedidoBindingSource.DataSource = Me.Base_Datos11DataSet
+        '
+        'Base_Datos11DataSet
+        '
+        Me.Base_Datos11DataSet.DataSetName = "Base_Datos11DataSet"
+        Me.Base_Datos11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Numero_de_PedidoTextBox
         '
@@ -209,6 +220,11 @@ Partial Class Detalles_pedido
         Me.NombreTextBox.Size = New System.Drawing.Size(406, 20)
         Me.NombreTextBox.TabIndex = 38
         '
+        'UsuariosBindingSource
+        '
+        Me.UsuariosBindingSource.DataMember = "Usuarios"
+        Me.UsuariosBindingSource.DataSource = Me.Base_Datos11DataSet
+        '
         'ContactoTextBox
         '
         Me.ContactoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Contacto", True))
@@ -226,21 +242,6 @@ Partial Class Detalles_pedido
         Me.ZonaTextBox.ReadOnly = True
         Me.ZonaTextBox.Size = New System.Drawing.Size(406, 20)
         Me.ZonaTextBox.TabIndex = 40
-        '
-        'UsuariosBindingSource
-        '
-        Me.UsuariosBindingSource.DataMember = "Usuarios"
-        Me.UsuariosBindingSource.DataSource = Me.Base_Datos11DataSet
-        '
-        'Base_Datos11DataSet
-        '
-        Me.Base_Datos11DataSet.DataSetName = "Base_Datos11DataSet"
-        Me.Base_Datos11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PedidoBindingSource
-        '
-        Me.PedidoBindingSource.DataMember = "Pedido"
-        Me.PedidoBindingSource.DataSource = Me.Base_Datos11DataSet
         '
         'PedidoTableAdapter
         '
@@ -283,9 +284,9 @@ Partial Class Detalles_pedido
         Me.Name = "Detalles_pedido"
         Me.Text = "Detalles_pedido"
         CType(Me.detalles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Base_Datos11DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

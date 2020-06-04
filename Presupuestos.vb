@@ -62,6 +62,10 @@ Public Class Presupuestos
         If lstCantidad.Items.Count = 0 Then
             MsgBox("Tiene que ingresar productos antes de poder realizar el pedido")
             Return
+
+        ElseIf Not IsNumeric(txtPresupuesto.text) Then
+            MsgBox("Ingrese un valor numerico para el presupuesto")
+            Return
         End If
 
         Try
@@ -71,9 +75,9 @@ Public Class Presupuestos
         End Try
 
 
-        If txtPresupuesto.Text = "" Or xtotal > txtPresupuesto.Text Then
+        If xtotal > txtPresupuesto.Text Then
 
-            MsgBox("El presupuesto no es válido para realizar el pedido")
+            MsgBox("El total no puede ser mayor al presupuesto")
         Else
             numeropedido = Me.PedidoTableAdapter.BUSQUEDA_MAX() + 1
             Me.PedidoTableAdapter.Insertar_Pedido(numeropedido, Inicio_de_sesion.DPI, Inicio_de_sesion.nombre, Val(txtTotal.Text), Date.Today)

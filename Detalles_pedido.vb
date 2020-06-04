@@ -45,6 +45,7 @@ Public Class Detalles_pedido
             Mensaje.IsBodyHtml = True
         Catch ex As Exception
             MsgBox(ex.Message)
+            Return
         End Try
 
         Try
@@ -52,8 +53,11 @@ Public Class Detalles_pedido
             MessageBox.Show("Mensaje enviado correctamente", "Guatemala en casa", MessageBoxButtons.OK)
         Catch ex As System.Net.Mail.SmtpException
             MessageBox.Show(ex.ToString, "Error!", MessageBoxButtons.OK)
+            Return
         End Try
 
+        Me.PedidoTableAdapter.BorrarPedido(Val(Numero_de_PedidoTextBox.Text))
+        Access.ExecQuery("DROP TABLE " & Me.Base_Datos11DataSet.Pedido.Rows(0).Item(1).ToString)
     End Sub
 
     Private Sub Detalles_pedido_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -105,4 +109,5 @@ Public Class Detalles_pedido
     Private Sub Detalles_pedido_Click(sender As Object, e As EventArgs) Handles Me.Click
 
     End Sub
+
 End Class

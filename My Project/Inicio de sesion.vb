@@ -31,6 +31,8 @@
             Voluntarios.Show()
         End If
 
+        txtContraseña.Text = ""
+        txtDPI.Text = ""
 
     End Sub
 

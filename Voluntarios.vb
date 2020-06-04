@@ -16,6 +16,10 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
+            If Not pedidos.CurrentCell.ColumnIndex = 0 Then
+                MsgBox("Selecione el numero del pedido")
+                Return
+            End If
             NumPedido = pedidos.CurrentCell.Value
             Me.Hide()
             Detalles_pedido.Show()
