@@ -1,4 +1,4 @@
 git add .
-git commit -m "Configuracion x86"
+git commit -m "Proyecto Finalizado"
 git push
 PAUSE
