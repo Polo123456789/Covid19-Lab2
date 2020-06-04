@@ -54,4 +54,29 @@ Public Class DBControl
         Dim NewParam As New OleDbParameter(Name, Value)
         Params.Add(NewParam)
     End Sub
+
+    Public Function Crear_Tabla(nombre As String)
+        Dim sql As String
+        sql = "Create Table " & nombre & " ([Codigo Producto] integer primary key,Producto char(50), Cantidad integer);"
+        ExecQuery(sql)
+
+        If Exception = "" Then
+            Return 0
+        Else
+            Return 1
+        End If
+
+    End Function
+
+    Public Function ingresar_producto(codigo As Integer, producto As String, cantidad As Integer, nombre As String)
+        Dim sql2 As String
+
+        sql2 = "Insert into " & nombre & "(Codigo Producto, Producto , Cantidad) values ( " & CStr(codigo) & ", '" & producto & "', " & CStr(cantidad) & ");"
+        If Exception = "" Then
+            Return 0
+        Else
+            Return 1
+        End If
+    End Function
+
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class Inicio_de_sesion
-    Public correo As String
+    Public correo, nombre, DPI As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim DPI, Contraseña As String
+        Dim Contraseña As String
 
         DPI = txtDPI.Text
         Contraseña = txtContraseña.Text
@@ -19,6 +19,9 @@
         Dim tipo As String
         tipo = Me.UsuariosTableAdapter.GetTipo(DPI)
         correo = Me.UsuariosTableAdapter.GetEmail(DPI)
+
+        nombre = Me.UsuariosTableAdapter.GET_NOMBRE(DPI)
+
 
         If tipo = "Beneficiario" Then
             Me.Hide()
