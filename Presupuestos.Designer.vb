@@ -80,21 +80,21 @@ Partial Class Presupuestos
         '
         Me.lblProductosLista.AutoSize = True
         Me.lblProductosLista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblProductosLista.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProductosLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProductosLista.ForeColor = System.Drawing.Color.MediumBlue
         Me.lblProductosLista.Location = New System.Drawing.Point(253, 9)
         Me.lblProductosLista.Name = "lblProductosLista"
-        Me.lblProductosLista.Size = New System.Drawing.Size(334, 43)
+        Me.lblProductosLista.Size = New System.Drawing.Size(334, 41)
         Me.lblProductosLista.TabIndex = 0
         Me.lblProductosLista.Text = "Productos a tu lista"
         '
         'lblPresupuesto
         '
         Me.lblPresupuesto.AutoSize = True
-        Me.lblPresupuesto.Font = New System.Drawing.Font("Gill Sans MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPresupuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPresupuesto.Location = New System.Drawing.Point(255, 91)
         Me.lblPresupuesto.Name = "lblPresupuesto"
-        Me.lblPresupuesto.Size = New System.Drawing.Size(154, 38)
+        Me.lblPresupuesto.Size = New System.Drawing.Size(167, 31)
         Me.lblPresupuesto.TabIndex = 1
         Me.lblPresupuesto.Text = "Presupuesto"
         '
@@ -109,50 +109,50 @@ Partial Class Presupuestos
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombre.Location = New System.Drawing.Point(21, 259)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(173, 30)
+        Me.lblNombre.Size = New System.Drawing.Size(179, 25)
         Me.lblNombre.TabIndex = 5
         Me.lblNombre.Text = "Nombre Producto"
         '
         'lblCantidad
         '
         Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Font = New System.Drawing.Font("Gill Sans MT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCantidad.Location = New System.Drawing.Point(369, 252)
         Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(101, 34)
+        Me.lblCantidad.Size = New System.Drawing.Size(109, 29)
         Me.lblCantidad.TabIndex = 6
         Me.lblCantidad.Text = "Cantidad"
         '
         'lblPrecioU
         '
         Me.lblPrecioU.AutoSize = True
-        Me.lblPrecioU.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioU.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrecioU.Location = New System.Drawing.Point(213, 259)
         Me.lblPrecioU.Name = "lblPrecioU"
-        Me.lblPrecioU.Size = New System.Drawing.Size(132, 30)
+        Me.lblPrecioU.Size = New System.Drawing.Size(144, 25)
         Me.lblPrecioU.TabIndex = 7
         Me.lblPrecioU.Text = "Precio unidad"
         '
         'lblSubtotal
         '
         Me.lblSubtotal.AutoSize = True
-        Me.lblSubtotal.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSubtotal.Location = New System.Drawing.Point(506, 256)
         Me.lblSubtotal.Name = "lblSubtotal"
-        Me.lblSubtotal.Size = New System.Drawing.Size(85, 30)
+        Me.lblSubtotal.Size = New System.Drawing.Size(91, 25)
         Me.lblSubtotal.TabIndex = 8
         Me.lblSubtotal.Text = "Subtotal"
         '
         'lblLugar
         '
         Me.lblLugar.AutoSize = True
-        Me.lblLugar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLugar.Location = New System.Drawing.Point(629, 256)
         Me.lblLugar.Name = "lblLugar"
-        Me.lblLugar.Size = New System.Drawing.Size(158, 30)
+        Me.lblLugar.Size = New System.Drawing.Size(174, 25)
         Me.lblLugar.TabIndex = 9
         Me.lblLugar.Text = "Lugar de compra"
         '
@@ -204,10 +204,10 @@ Partial Class Presupuestos
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.Location = New System.Drawing.Point(383, 458)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(100, 39)
+        Me.lblTotal.Size = New System.Drawing.Size(75, 31)
         Me.lblTotal.TabIndex = 15
         Me.lblTotal.Text = "Total"
         '
@@ -222,7 +222,7 @@ Partial Class Presupuestos
         'btnFinalizar
         '
         Me.btnFinalizar.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.btnFinalizar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFinalizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinalizar.ForeColor = System.Drawing.Color.Black
         Me.btnFinalizar.Location = New System.Drawing.Point(647, 458)
         Me.btnFinalizar.Name = "btnFinalizar"
@@ -233,7 +233,7 @@ Partial Class Presupuestos
         '
         'Btnagregar
         '
-        Me.Btnagregar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Btnagregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold)
         Me.Btnagregar.Location = New System.Drawing.Point(606, 160)
         Me.Btnagregar.Name = "Btnagregar"
         Me.Btnagregar.Size = New System.Drawing.Size(137, 36)
@@ -269,10 +269,10 @@ Partial Class Presupuestos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(61, 174)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(172, 30)
+        Me.Label2.Size = New System.Drawing.Size(182, 25)
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Registro producto"
         '
@@ -322,16 +322,16 @@ Partial Class Presupuestos
         'cantidad
         '
         Me.cantidad.AutoSize = True
-        Me.cantidad.Font = New System.Drawing.Font("Gill Sans MT", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cantidad.Location = New System.Drawing.Point(379, 165)
+        Me.cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cantidad.Location = New System.Drawing.Point(380, 174)
         Me.cantidad.Name = "cantidad"
-        Me.cantidad.Size = New System.Drawing.Size(91, 30)
+        Me.cantidad.Size = New System.Drawing.Size(98, 25)
         Me.cantidad.TabIndex = 25
         Me.cantidad.Text = "Cantidad"
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(476, 169)
+        Me.txtCantidad.Location = New System.Drawing.Point(484, 174)
         Me.txtCantidad.Multiline = True
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(78, 26)

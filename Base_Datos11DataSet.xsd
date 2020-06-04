@@ -96,7 +96,7 @@ WHERE DPI = ?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GET_NOMBRE" Modifier="Public" Name="GET_NOMBRE" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GET_NOMBRE">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GET_NOMBRE" Modifier="Public" Name="GET_NOMBRE" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GET_NOMBRE">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Nombre FROM Usuarios WHERE DPI =?</CommandText>
@@ -106,7 +106,7 @@ WHERE DPI = ?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetEmail" Modifier="Public" Name="GetEmail" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetEmail">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetEmail" Modifier="Public" Name="GetEmail" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetEmail">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT CorreoElectronico FROM Usuarios WHERE DPI = ?</CommandText>
@@ -116,7 +116,7 @@ WHERE DPI = ?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetTipo" Modifier="Public" Name="GetTipo" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetTipo">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetTipo" Modifier="Public" Name="GetTipo" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetTipo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Tipo FROM Usuarios Where DPI = ?</CommandText>
@@ -126,7 +126,7 @@ WHERE DPI = ?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Password" Modifier="Public" Name="Password" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Password">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Password" Modifier="Public" Name="Password" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Password">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Contraseña FROM Usuarios WHERE DPI = ?</CommandText>
@@ -136,7 +136,7 @@ WHERE DPI = ?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Registrar" Modifier="Public" Name="Registrar" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Registrar">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Registrar" Modifier="Public" Name="Registrar" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Registrar">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `Usuarios` (`Nombre`, `Contacto`, `Zona`, `DPI`, `CorreoElectronico`, `Contraseña`, `Tipo`) VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
@@ -233,7 +233,7 @@ FROM            Pedido</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BUSQUEDA_MAX" Modifier="Public" Name="BUSQUEDA_MAX" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="BUSQUEDA_MAX">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BUSQUEDA_MAX" Modifier="Public" Name="BUSQUEDA_MAX" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BUSQUEDA_MAX">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX ([Numero de Pedido] ) FROM Pedido</CommandText>
@@ -241,7 +241,7 @@ FROM            Pedido</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Pedido" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPedido" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByPedido" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByPedido">
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="Pedido" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByPedido" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillByPedido" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillByPedido">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT           *
@@ -266,6 +266,16 @@ WHERE          [Numero de Pedido] = ? </CommandText>
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Base_Datos11ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LimpiarPedido" Modifier="Public" Name="LimpiarPedido" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="LimpiarPedido">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM `Pedido` WHERE (`Pedido` = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Pedido" DataSourceName="Pedido" DataTypeServer="DbType.StringFixedLength(50)" DbType="String" Direction="Input" ParameterName="Pedido" Precision="0" ProviderType="WChar" Scale="0" Size="50" SourceColumn="Pedido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
               </DbSource>
             </Sources>
           </TableAdapter>

@@ -61,9 +61,14 @@ Public Class DBControl
         ExecQuery(sql)
 
         If Exception = "" Then
-            Return 0
+            Return True
         Else
-            Return 1
+            Try
+                ExecQuery("DROP TABLE " & nombre & ";")
+            Catch ex As Exception
+                Return False
+            End Try
+            Return Crear_Tabla(nombre)
         End If
 
     End Function
@@ -71,11 +76,13 @@ Public Class DBControl
     Public Function ingresar_producto(codigo As Integer, producto As String, cantidad As Integer, nombre As String)
         Dim sql2 As String
 
-        sql2 = "Insert into " & nombre & "(Codigo Producto, Producto , Cantidad) values ( " & CStr(codigo) & ", '" & producto & "', " & CStr(cantidad) & ");"
+        sql2 = "Insert into " & nombre & " ([Codigo Producto], Producto, Cantidad) values ( " & CStr(codigo) & ", '" & producto & "', " & CStr(cantidad) & ");"
+        ExecQuery(sql2)
+
         If Exception = "" Then
-            Return 0
+            Return True
         Else
-            Return 1
+            Return False
         End If
     End Function
 

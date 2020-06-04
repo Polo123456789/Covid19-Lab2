@@ -45,8 +45,15 @@ Public Class Presupuestos
         txtTotal.Text = xtotal
     End Sub
 
-    
+
     Private Sub btnFinalizar_Click(sender As System.Object, e As System.EventArgs) Handles btnFinalizar.Click
+
+        Try
+            Me.PedidoTableAdapter.LimpiarPedido(Inicio_de_sesion.nombre)
+        Catch ex As Exception
+
+        End Try
+
 
         If txtPresupuesto.Text = "" Or xtotal > txtPresupuesto.Text Then
 
@@ -64,7 +71,7 @@ Public Class Presupuestos
 
         End If
 
-        For producto As Integer = 0 To lstNombre.Items.Count
+        For producto As Integer = 0 To lstNombre.Items.Count - 1
             If Not access.ingresar_producto(producto, lstNombre.Items(producto), Val(lstCantidad.Items(producto)), Inicio_de_sesion.nombre) Then
                 MsgBox(access.Exception)
                 Return
@@ -73,11 +80,9 @@ Public Class Presupuestos
 
         Next
 
-
-        
-
-
-
+        MsgBox("Se ha realizado el pedido, espere a ser contactado por uno de los voluntarios")
+        Me.Hide()
+        Inicio_de_sesion.Show()
     End Sub
 
     Private Sub Btnborrar_Click(sender As System.Object, e As System.EventArgs) Handles Btnborrar.Click
